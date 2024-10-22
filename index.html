@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios JS</title>
+    <style>
+        section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios JS</h1>
+
+    <!-- Sección 1: Contador de Caracteres -->
+    <section>
+        <h2>Contador de Caracteres</h2>
+        <input id="inputContador" type="text" placeholder="Ingrese una palabra u oración">
+        <button onclick="contarCaracteres()">Contar Caracteres</button>
+        <p id="resultadoContador"></p>
+    </section>
+
+    <!-- Sección 2: Verificación de Contraseña -->
+    <section>
+        <h2>Verificación de Contraseña</h2>
+        <input id="inputContrasena" type="password" placeholder="Ingrese una contraseña">
+        <button onclick="verificarContrasena()">Verificar Contraseña</button>
+        <p id="resultadoContrasena"></p>
+    </section>
+
+    <script>
+        // Script para el contador de caracteres
+        function contarCaracteres() {
+            const texto = document.getElementById("inputContador").value;
+            document.getElementById("resultadoContador").innerText = `Caracteres: ${texto.length}`;
+        }
+
+        // Script para la verificación de contraseña
+        function verificarContrasena() {
+            const contrasena = document.getElementById("inputContrasena").value;
+            const esValida = contrasena.length >= 8 && /[A-Z]/.test(contrasena) && /[0-9]/.test(contrasena) && /[!@#$%^&*]/.test(contrasena);
+            document.getElementById("resultadoContrasena").innerText = esValida ? "Contraseña válida" : "Contraseña inválida";
+        }
+    </script>
+</body>
+</html>

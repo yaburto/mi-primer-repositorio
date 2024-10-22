@@ -1,23 +1,14 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { iniciarCalculos } from '../ejercicios/areaCalculadora'; // Asegúrate de que la ruta sea correcta
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hola Mundo</Text>
-    </View>
-  );
-}
+const App = () => {
+    return (
+        <View>
+            <Text>Hola Mundo!</Text>
+            <Button title="Calcular Áreas" onPress={iniciarCalculos} />
+        </View>
+    );
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#fff',
-  },
-  text: {
-    fontSize: 24,
-    color: '#333',
-  },
-});
+export default App;
